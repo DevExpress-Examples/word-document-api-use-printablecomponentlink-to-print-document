@@ -27,7 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_PrintFromServer = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_PrintFromServer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_PrintFromServer
@@ -53,7 +53,7 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton btn_PrintFromServer;
+        private System.Windows.Forms.Button btn_PrintFromServer;
     }
 }
 

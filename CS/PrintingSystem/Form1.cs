@@ -4,6 +4,7 @@ using System.Drawing.Printing;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraRichEdit;
 using DevExpress.XtraRichEdit.API.Native;
+using DevExpress.XtraPrintingLinks;
 
 namespace RichEdit_PrintingSystem
 {
@@ -52,22 +53,29 @@ namespace RichEdit_PrintingSystem
         private static void PrintViaLink(RichEditDocumentServer srv)
         {
             if (!srv.IsPrintingAvailable) return;
-            PrintableComponentLink link = new PrintableComponentLink(new PrintingSystem());
-            link.Component = srv;
-            // Disable warnings.
-            link.PrintingSystem.ShowMarginsWarning = false;
-            link.PrintingSystem.ShowPrintStatusDialog = false;
-            // Find a printer containing 'Canon' in its name.
-            string printerName = String.Empty;
-            for (int i = 0; i < PrinterSettings.InstalledPrinters.Count; i++) {
-                string pName = PrinterSettings.InstalledPrinters[i];
-                if (pName.Contains("Canon")) {
-                    printerName = pName;
-                    break;
+            using (PrintingSystemBase ps = new PrintingSystemBase())
+            using (PrintableComponentLinkBase link = new PrintableComponentLinkBase(ps)) {
+                link.Component = srv;
+                // Disable warnings.
+                ps.ShowMarginsWarning = false;
+                ps.ShowPrintStatusDialog = false;
+                // Find a printer containing 'Canon' in its name.
+                string printerName = String.Empty;
+                for (int i = 0; i < PrinterSettings.InstalledPrinters.Count; i++) {
+                    string pName = PrinterSettings.InstalledPrinters[i];
+                    if (pName.Contains("PDF")) {
+                        printerName = pName;
+                        break;
+                    }
                 }
+
+                //Run document creaion
+                link.CreateDocument();
+
+                // Print to the specified printer.
+                PrintToolBase tool = new PrintToolBase(ps);
+                tool.Print(printerName);
             }
-            // Print to the specified printer.
-            link.Print(printerName);
         }
         #endregion #printvialink
     }
