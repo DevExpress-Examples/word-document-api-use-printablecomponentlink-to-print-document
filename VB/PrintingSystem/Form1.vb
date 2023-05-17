@@ -38,7 +38,7 @@ Namespace RichEdit_PrintingSystem
 #Region "#setprintoptions"
         Private Shared Sub SetPrintOptions(ByVal richedit As IRichEditDocumentServer)
             For Each _section As Section In richedit.Document.Sections
-                _section.Page.PaperKind = System.Drawing.Printing.PaperKind.A4
+                _section.Page.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.A4
                 _section.Page.Landscape = False
                 _section.Margins.Left = 150F
                 _section.Margins.Right = 150F
