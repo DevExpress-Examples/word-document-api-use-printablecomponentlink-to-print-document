@@ -11,8 +11,7 @@
     <RootNamespace>RichEdit_PrintingSystem</RootNamespace>
     <AssemblyName>RichEdit_PrintingSystem</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
@@ -54,28 +53,28 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v23.1.Core, Version=23.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Charts.Core.23.1.2-beta\lib\net452\DevExpress.Charts.v23.1.Core.dll</HintPath>
+      <HintPath>..\packages\DevExpress.Charts.Core.23.1.2\lib\net452\DevExpress.Charts.v23.1.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.CodeParser.v23.1, Version=23.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.CodeParser.23.1.2-beta\lib\net452\DevExpress.CodeParser.v23.1.dll</HintPath>
+      <HintPath>..\packages\DevExpress.CodeParser.23.1.2\lib\net452\DevExpress.CodeParser.v23.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Data.Desktop.v23.1, Version=23.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Data.Desktop.23.1.2-beta\lib\net452\DevExpress.Data.Desktop.v23.1.dll</HintPath>
+      <HintPath>..\packages\DevExpress.DataVisualization.Core.23.1.2\lib\net452\DevExpress.DataVisualization.v23.1.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Data.v23.1, Version=23.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Data.23.1.2-beta\lib\net452\DevExpress.Data.v23.1.dll</HintPath>
+      <HintPath>..\packages\DevExpress.DataVisualization.Core.23.1.2\lib\net452\DevExpress.DataVisualization.v23.1.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.DataAccess.v23.1, Version=23.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.DataAccess.23.1.2-beta\lib\net452\DevExpress.DataAccess.v23.1.dll</HintPath>
+      <HintPath>..\packages\DevExpress.DataVisualization.Core.23.1.2\lib\net452\DevExpress.DataVisualization.v23.1.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.DataVisualization.v23.1.Core, Version=23.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.DataVisualization.Core.23.1.2-beta\lib\net452\DevExpress.DataVisualization.v23.1.Core.dll</HintPath>
+      <HintPath>..\packages\DevExpress.DataVisualization.Core.23.1.2\lib\net452\DevExpress.DataVisualization.v23.1.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Docs.v23.1, Version=23.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Document.Processor.23.1.2-beta\lib\net452\DevExpress.Docs.v23.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Drawing.v23.1, Version=23.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Drawing.23.1.2-beta\lib\net452\DevExpress.Drawing.v23.1.dll</HintPath>
+      <HintPath>..\packages\DevExpress.Drawing.23.1.2\lib\net452\DevExpress.Drawing.v23.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Office.v23.1.Core, Version=23.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Office.Core.23.1.2-beta\lib\net452\DevExpress.Office.v23.1.Core.dll</HintPath>
@@ -102,10 +101,10 @@
       <HintPath>..\packages\DevExpress.Spreadsheet.Core.23.1.2-beta\lib\net452\DevExpress.Spreadsheet.v23.1.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.TreeMap.v23.1.Core, Version=23.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.TreeMap.Core.23.1.2-beta\lib\net452\DevExpress.TreeMap.v23.1.Core.dll</HintPath>
+      <HintPath>..\packages\DevExpress.TreeMap.Core.23.1.2\lib\net452\DevExpress.TreeMap.v23.1.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Xpo.v23.1, Version=23.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Xpo.23.1.2-beta\lib\net452\DevExpress.Xpo.v23.1.dll</HintPath>
+      <HintPath>..\packages\DevExpress.Xpo.23.1.2\lib\net452\DevExpress.Xpo.v23.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraCharts.v23.1, Version=23.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Charts.23.1.2-beta\lib\net452\DevExpress.XtraCharts.v23.1.dll</HintPath>
