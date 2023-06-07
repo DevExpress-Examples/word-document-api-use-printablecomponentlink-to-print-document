@@ -28,8 +28,8 @@ namespace RichEdit_PrintingSystem
             // Specify page margins, orientation, etc.
             SetPrintOptions(srv);
             srv.EndUpdate();
-            // Display field values instead of code.
-            srv.Options.MailMerge.ViewMergedData = true;
+            // Update fields
+            srv.Document.UpdateAllFields();
             // Create a printable link to print a document.
             PrintViaLink(srv);
         }
@@ -44,8 +44,6 @@ namespace RichEdit_PrintingSystem
                 _section.Margins.Right = 150f;
                 _section.Margins.Top = 50f;
                 _section.Margins.Bottom = 50f;
-                _section.PageNumbering.NumberingFormat = NumberingFormat.CardinalText;
-                _section.PageNumbering.FirstPageNumber = 0;
             }
         }
         #endregion #setprintoptions
@@ -59,7 +57,7 @@ namespace RichEdit_PrintingSystem
                 // Disable warnings.
                 ps.ShowMarginsWarning = false;
                 ps.ShowPrintStatusDialog = false;
-                // Find a printer containing 'Canon' in its name.
+                // Find a printer containing 'PDF' in its name.
                 string printerName = String.Empty;
                 for (int i = 0; i < PrinterSettings.InstalledPrinters.Count; i++) {
                     string pName = PrinterSettings.InstalledPrinters[i];

@@ -28,8 +28,8 @@ Namespace RichEdit_PrintingSystem
             ' Specify page margins, orientation, etc.
             SetPrintOptions(srv)
             srv.EndUpdate()
-            ' Display field values instead of code.
-            srv.Options.MailMerge.ViewMergedData = True
+            ' Update fields
+            srv.Document.UpdateAllFields()
             ' Create a printable link to print a document.
             PrintViaLink(srv)
         End Sub
@@ -42,10 +42,8 @@ Namespace RichEdit_PrintingSystem
                 _section.Page.Landscape = False
                 _section.Margins.Left = 150F
                 _section.Margins.Right = 150F
-                _section.Margins.Top = 50F
-                _section.Margins.Bottom = 50F
-                _section.PageNumbering.NumberingFormat = NumberingFormat.CardinalText
-                _section.PageNumbering.FirstPageNumber = 0
+                _section.Margins.Top = 50.0F
+                _section.Margins.Bottom = 50.0F
             Next
         End Sub
 
@@ -59,7 +57,7 @@ Namespace RichEdit_PrintingSystem
                     ' Disable warnings.
                     ps.ShowMarginsWarning = False
                     ps.ShowPrintStatusDialog = False
-                    ' Find a printer containing 'Canon' in its name.
+                    ' Find a printer containing 'PDF' in its name.
                     Dim printerName As String = String.Empty
                     For i As Integer = 0 To PrinterSettings.InstalledPrinters.Count - 1
                         Dim pName As String = PrinterSettings.InstalledPrinters(i)
