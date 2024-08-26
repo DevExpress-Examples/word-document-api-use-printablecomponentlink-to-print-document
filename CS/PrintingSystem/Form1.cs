@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Drawing.Printing;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraRichEdit;
 using DevExpress.XtraRichEdit.API.Native;
 using DevExpress.XtraPrintingLinks;
+using DevExpress.XtraEditors;
 
 namespace RichEdit_PrintingSystem
 {
-    public partial class Form1 : Form
+    public partial class Form1 : XtraForm
     {
         public Form1()
         {
