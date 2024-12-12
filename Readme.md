@@ -9,6 +9,9 @@
 
 This example demonstrates how to use a [PrintableComponentLinkBase](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPrintingLinks.PrintableComponentLinkBase) to print from the RichEditDocumentServer. An instance of the RichEditDocumentServer loads a document, inserts a datetime stamp in its header, and prints it.
 
+> [!Important]  
+> The Universal Subscription or an additional Office File API Subscription is required to use this example in production code. For pricing information, please refer to the [DevExpress Subscription](https://www.devexpress.com/Subscriptions/) page.  
+
 Various print options, such as page size, orientation, and margins are set in code at run time.
 The WinForms application searches a list of installed printers for a printer containing a certain text ("PDF") in its name and prints to it. If a printer is not found, the default printer is used.
  
