@@ -1,5 +1,4 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128608381/24.2.3%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E4846)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
@@ -8,6 +7,9 @@
 # Word Processing Document API - Use the PrintableComponentLinkBase to Print a Document
 
 This example demonstrates how to use a [PrintableComponentLinkBase](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPrintingLinks.PrintableComponentLinkBase) to print from the RichEditDocumentServer. An instance of the RichEditDocumentServer loads a document, inserts a datetime stamp in its header, and prints it.
+
+> [!Important]  
+> The Universal Subscription or an additional Office File API Subscription is required to use this example in production code. For pricing information, please refer to the [DevExpress Subscription](https://www.devexpress.com/Subscriptions/) page.  
 
 Various print options, such as page size, orientation, and margins are set in code at run time.
 The WinForms application searches a list of installed printers for a printer containing a certain text ("PDF") in its name and prints to it. If a printer is not found, the default printer is used.
