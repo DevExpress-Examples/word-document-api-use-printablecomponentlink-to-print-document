@@ -1,5 +1,7 @@
-﻿Namespace RichEdit_PrintingSystem
-    Partial Public Class Form1
+Namespace RichEdit_PrintingSystem
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,14 +12,14 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -33,6 +35,7 @@
             Me.btn_PrintFromServer.Size = New System.Drawing.Size(146, 23)
             Me.btn_PrintFromServer.TabIndex = 2
             Me.btn_PrintFromServer.Text = "Load and Print"
+            AddHandler Me.btn_PrintFromServer.Click, New System.EventHandler(AddressOf Me.btn_PrintFromServer_Click)
             ' 
             ' Form1
             ' 
@@ -43,12 +46,9 @@
             Me.Name = "Form1"
             Me.Text = "Form1"
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
-        Private WithEvents btn_PrintFromServer As DevExpress.XtraEditors.SimpleButton
+'#End Region
+        Private btn_PrintFromServer As DevExpress.XtraEditors.SimpleButton
     End Class
 End Namespace
-
