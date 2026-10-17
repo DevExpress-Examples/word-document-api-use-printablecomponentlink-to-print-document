@@ -1,4 +1,4 @@
-﻿Imports System
+Imports System
 Imports System.Windows.Forms
 Imports System.Drawing.Printing
 Imports DevExpress.XtraPrinting
@@ -6,20 +6,22 @@ Imports DevExpress.XtraRichEdit
 Imports DevExpress.XtraRichEdit.API.Native
 
 Namespace RichEdit_PrintingSystem
-    Partial Public Class Form1
+
+    Public Partial Class Form1
         Inherits Form
 
         Public Sub New()
             InitializeComponent()
         End Sub
-        #Region "#printfromserver"
-        Private Sub btn_PrintFromServer_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_PrintFromServer.Click
-            Dim srv As New RichEditDocumentServer()
+
+'#Region "#printfromserver"
+        Private Sub btn_PrintFromServer_Click(ByVal sender As Object, ByVal e As EventArgs)
+            Dim srv As RichEditDocumentServer = New RichEditDocumentServer()
             srv.LoadDocument("Grimm.docx", DocumentFormat.OpenXml)
             ' Insert a field displaying the current date/time into the document header.
             srv.BeginUpdate()
             Dim _header As SubDocument = srv.Document.Sections(0).BeginUpdateHeader()
-            _header.Fields.Create(_header.Range.Start,"DATE \@ ""dddd, MMMM dd, yyyy  HH:mm:ss"" \MERGEFORMAT")
+            _header.Fields.Create(_header.Range.Start, "DATE \@ ""dddd, MMMM dd, yyyy  HH:mm:ss"" \MERGEFORMAT")
             _header.Paragraphs(0).Alignment = ParagraphAlignment.Right
             srv.Document.Sections(0).EndUpdateHeader(_header)
             ' Specify page margins, orientation, etc.
@@ -30,8 +32,9 @@ Namespace RichEdit_PrintingSystem
             ' Create a printable link to print a document.
             PrintViaLink(srv)
         End Sub
-        #End Region ' #printfromserver
-        #Region "#setprintoptions"
+
+'#End Region  ' #printfromserver
+'#Region "#setprintoptions"
         Private Shared Sub SetPrintOptions(ByVal richedit As IRichEditDocumentServer)
             For Each _section As Section In richedit.Document.Sections
                 _section.Page.PaperKind = System.Drawing.Printing.PaperKind.A4
@@ -42,15 +45,14 @@ Namespace RichEdit_PrintingSystem
                 _section.Margins.Bottom = 50F
                 _section.PageNumbering.NumberingFormat = NumberingFormat.CardinalText
                 _section.PageNumbering.FirstPageNumber = 0
-            Next _section
+            Next
         End Sub
-        #End Region ' #setprintoptions
-        #Region "#printvialink"
+
+'#End Region  ' #setprintoptions
+'#Region "#printvialink"
         Private Shared Sub PrintViaLink(ByVal srv As RichEditDocumentServer)
-            If Not srv.IsPrintingAvailable Then
-                Return
-            End If
-            Dim link As New PrintableComponentLink(New PrintingSystem())
+            If Not srv.IsPrintingAvailable Then Return
+            Dim link As PrintableComponentLink = New PrintableComponentLink(New PrintingSystem())
             link.Component = srv
             ' Disable warnings.
             link.PrintingSystem.ShowMarginsWarning = False
@@ -63,10 +65,11 @@ Namespace RichEdit_PrintingSystem
                     printerName = pName
                     Exit For
                 End If
-            Next i
+            Next
+
             ' Print to the specified printer.
             link.Print(printerName)
         End Sub
-        #End Region ' #printvialink
+'#End Region  ' #printvialink
     End Class
 End Namespace
